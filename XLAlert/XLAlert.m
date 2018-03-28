@@ -63,67 +63,67 @@ static XLAlert *_instance;
 - (XLAlert * (^)(NSString *tag)) tag {
     return ^(NSString *tag) {
         _tag = [tag integerValue];
-        return self;
+        return _instance;
     };
 }
 - (XLAlert * (^)(XLAlertControllerStyle style)) style {
     return ^(XLAlertControllerStyle style) {
         _style = style;
-        return self;
+        return _instance;
     };
 }
 - (XLAlert * (^)(UIViewController *presentViewController)) presentViewController {
     return ^(UIViewController *presentViewController) {
         _viewController = presentViewController;
-        return self;
+        return _instance;
     };
 }
 - (XLAlert * (^)(NSString *KTitle)) title {
     return ^(NSString *title) {
         _title = title;
-        return self;
+        return _instance;
     };
 }
 - (XLAlert * (^)(NSString *message)) message {
     return ^(NSString *message) {
         _message = message;
-        return self;
+        return _instance;
     };
 }
 - (XLAlert * (^)(Surehandler)) suerHandler {
     return ^(Surehandler handler) {
         _sHandler = handler;
-        return self;
+        return _instance;
     };
 }
 - (XLAlert * (^)(Cancelhandler)) cancelHandler {
     return ^(Cancelhandler handler) {
         _cHandler = handler;
-        return self;
+        return _instance;
     };
 }
 - (XLAlert * (^)(UIColor *sureButtonColor)) sureButtonColor {
     return ^(UIColor *sureButtonColor) {
         _sureButtonColor = sureButtonColor;
-        return self;
+        return _instance;
     };
 }
 - (XLAlert * (^)(UIColor *cancleButtonColor)) cancleButtonColor {
     return ^(UIColor *cancleButtonColor) {
         _cancelButtonColor = cancleButtonColor;
-        return self;
+        return _instance;
     };
 }
 - (XLAlert * (^)(NSString *cancelButtonTitle)) cancelButtonTitle {
     return ^(NSString *cancelButtonTitle) {
         _cancelButtonTitle = cancelButtonTitle;
-        return self;
+        return _instance;
     };
 }
 - (XLAlert * (^)(NSString *sureButtonTitle)) sureButtonTitle {
     return ^(NSString *sureButtonTitle) {
         _sureButtonTitle = sureButtonTitle;
-        return self;
+        return _instance;
     };
 }
 
@@ -169,7 +169,7 @@ static XLAlert *_instance;
         
         [_viewController presentViewController:alertController animated:YES completion:nil];
         
-        return self;
+        return _instance;
     };
 }
 
