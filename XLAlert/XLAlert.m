@@ -60,118 +60,118 @@ static XLAlert *_instance;
 /**
  * * * * * * * * * *
  */
-//- (XLAlert * (^)(NSString *tag)) tag {
-//    return ^(NSString *tag) {
-//        _tag = [tag integerValue];
-//        return _instance;
-//    };
-//}
-//- (XLAlert * (^)(XLAlertControllerStyle style)) style {
-//    return ^(XLAlertControllerStyle style) {
-//        _style = style;
-//        return _instance;
-//    };
-//}
-//- (XLAlert * (^)(UIViewController *presentViewController)) presentViewController {
-//    return ^(UIViewController *presentViewController) {
-//        _viewController = presentViewController;
-//        return _instance;
-//    };
-//}
-//- (XLAlert * (^)(NSString *KTitle)) title {
-//    return ^(NSString *title) {
-//        _title = title;
-//        return _instance;
-//    };
-//}
-//- (XLAlert * (^)(NSString *message)) message {
-//    return ^(NSString *message) {
-//        _message = message;
-//        return _instance;
-//    };
-//}
-//- (XLAlert * (^)(Surehandler)) suerHandler {
-//    return ^(Surehandler handler) {
-//        _sHandler = handler;
-//        return _instance;
-//    };
-//}
-//- (XLAlert * (^)(Cancelhandler)) cancelHandler {
-//    return ^(Cancelhandler handler) {
-//        _cHandler = handler;
-//        return _instance;
-//    };
-//}
-//- (XLAlert * (^)(UIColor *sureButtonColor)) sureButtonColor {
-//    return ^(UIColor *sureButtonColor) {
-//        _sureButtonColor = sureButtonColor;
-//        return _instance;
-//    };
-//}
-//- (XLAlert * (^)(UIColor *cancleButtonColor)) cancleButtonColor {
-//    return ^(UIColor *cancleButtonColor) {
-//        _cancelButtonColor = cancleButtonColor;
-//        return _instance;
-//    };
-//}
-//- (XLAlert * (^)(NSString *cancelButtonTitle)) cancelButtonTitle {
-//    return ^(NSString *cancelButtonTitle) {
-//        _cancelButtonTitle = cancelButtonTitle;
-//        return _instance;
-//    };
-//}
-//- (XLAlert * (^)(NSString *sureButtonTitle)) sureButtonTitle {
-//    return ^(NSString *sureButtonTitle) {
-//        _sureButtonTitle = sureButtonTitle;
-//        return _instance;
-//    };
-//}
-//
-//- (XLAlert * (^)(void))show {
-//    return ^{
-//        UIAlertControllerStyle _alertStyle = (UIAlertControllerStyle )_style;
-//        /** 初始化*/
-//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:_title
-//                                                                                 message:_message
-//                                                                          preferredStyle:_alertStyle];
-//        
-//        /** sure:如果有处理添加*/
-//        if (_sHandler) {
-//            
-//            NSString *sureTitle = _sureButtonTitle?_sureButtonTitle:@"确定";
-//            UIAlertAction *sureAction = [UIAlertAction actionWithTitle:sureTitle
-//                                                                 style:UIAlertActionStyleDefault
-//                                                               handler:_sHandler];
-//            
-//            if (_sureButtonColor) {
-//                [sureAction setValue:_sureButtonColor forKey:@"_titleTextColor"];
-//            }
-//            [alertController addAction:sureAction];
-//        }else {
-//            UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定"
-//                                                                 style:UIAlertActionStyleDefault
-//                                                               handler:^(UIAlertAction *action) {}];
-//            [alertController addAction:sureAction];
-//        }
-//        
-//        /** cancel:如果有处理添加*/
-//        if (_cHandler) {
-//            
-//            NSString *cancelTitle = _cancelButtonTitle?_cancelButtonTitle:@"取消";
-//            UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:cancelTitle
-//                                                                   style:UIAlertActionStyleCancel
-//                                                                 handler:_cHandler];
-//            if (_cancelButtonColor) {
-//                [cancleAction setValue:_cancelButtonColor forKey:@"_titleTextColor"];
-//            }
-//            [alertController addAction:cancleAction];
-//        }
-//        
-//        [_viewController presentViewController:alertController animated:YES completion:nil];
-//        
-//        return _instance;
-//    };
-//}
+- (XLAlert * (^)(NSString *tag)) tag {
+    return ^(NSString *tag) {
+        _tag = [tag integerValue];
+        return _instance;
+    };
+}
+- (XLAlert * (^)(XLAlertControllerStyle style)) style {
+    return ^(XLAlertControllerStyle style) {
+        _style = style;
+        return _instance;
+    };
+}
+- (XLAlert * (^)(UIViewController *presentViewController)) presentViewController {
+    return ^(UIViewController *presentViewController) {
+        _viewController = presentViewController;
+        return _instance;
+    };
+}
+- (XLAlert * (^)(NSString *KTitle)) title {
+    return ^(NSString *title) {
+        _title = title;
+        return _instance;
+    };
+}
+- (XLAlert * (^)(NSString *message)) message {
+    return ^(NSString *message) {
+        _message = message;
+        return _instance;
+    };
+}
+- (XLAlert * (^)(Surehandler)) suerHandler {
+    return ^(Surehandler handler) {
+        _sHandler = handler;
+        return _instance;
+    };
+}
+- (XLAlert * (^)(Cancelhandler)) cancelHandler {
+    return ^(Cancelhandler handler) {
+        _cHandler = handler;
+        return _instance;
+    };
+}
+- (XLAlert * (^)(UIColor *sureButtonColor)) sureButtonColor {
+    return ^(UIColor *sureButtonColor) {
+        _sureButtonColor = sureButtonColor;
+        return _instance;
+    };
+}
+- (XLAlert * (^)(UIColor *cancleButtonColor)) cancleButtonColor {
+    return ^(UIColor *cancleButtonColor) {
+        _cancelButtonColor = cancleButtonColor;
+        return _instance;
+    };
+}
+- (XLAlert * (^)(NSString *cancelButtonTitle)) cancelButtonTitle {
+    return ^(NSString *cancelButtonTitle) {
+        _cancelButtonTitle = cancelButtonTitle;
+        return _instance;
+    };
+}
+- (XLAlert * (^)(NSString *sureButtonTitle)) sureButtonTitle {
+    return ^(NSString *sureButtonTitle) {
+        _sureButtonTitle = sureButtonTitle;
+        return _instance;
+    };
+}
+
+- (XLAlert * (^)(void))show {
+    return ^{
+        UIAlertControllerStyle _alertStyle = (UIAlertControllerStyle )_style;
+        /** 初始化*/
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:_title
+                                                                                 message:_message
+                                                                          preferredStyle:_alertStyle];
+        
+        /** sure:如果有处理添加*/
+        if (_sHandler) {
+            
+            NSString *sureTitle = _sureButtonTitle?_sureButtonTitle:@"确定";
+            UIAlertAction *sureAction = [UIAlertAction actionWithTitle:sureTitle
+                                                                 style:UIAlertActionStyleDefault
+                                                               handler:_sHandler];
+            
+            if (_sureButtonColor) {
+                [sureAction setValue:_sureButtonColor forKey:@"_titleTextColor"];
+            }
+            [alertController addAction:sureAction];
+        }else {
+            UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定"
+                                                                 style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction *action) {}];
+            [alertController addAction:sureAction];
+        }
+        
+        /** cancel:如果有处理添加*/
+        if (_cHandler) {
+            
+            NSString *cancelTitle = _cancelButtonTitle?_cancelButtonTitle:@"取消";
+            UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:cancelTitle
+                                                                   style:UIAlertActionStyleCancel
+                                                                 handler:_cHandler];
+            if (_cancelButtonColor) {
+                [cancleAction setValue:_cancelButtonColor forKey:@"_titleTextColor"];
+            }
+            [alertController addAction:cancleAction];
+        }
+        
+        [_viewController presentViewController:alertController animated:YES completion:nil];
+        
+        return _instance;
+    };
+}
 
 @end
 
