@@ -60,6 +60,8 @@ static XLAlert *_instance;
 /**
  * * * * * * * * * *
  */
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 - (XLAlert * (^)(NSString *tag)) tag {
     return ^(NSString *tag) {
         _tag = [tag integerValue];
@@ -172,6 +174,7 @@ static XLAlert *_instance;
         return _instance;
     };
 }
+#pragma clang diagnostic pop
 
 @end
 
