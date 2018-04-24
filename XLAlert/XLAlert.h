@@ -44,30 +44,30 @@ typedef void(^Cancelhandler)(UIAlertAction *action);
  * titsuerHandlerle:
  * cancelHandler:
  */
-//- (XLAlert * (^)(NSString *tag)) tag;
-//
-//- (XLAlert * (^)(NSString *title)) title;
-//- (XLAlert * (^)(NSString *message)) message;
-//- (XLAlert * (^)(NSString *sureButtonTitle)) sureButtonTitle;
-//- (XLAlert * (^)(NSString *cancelButtonTitle)) cancelButtonTitle;
-//
-//- (XLAlert * (^)(UIColor *sureButtonColor)) sureButtonColor;
-//- (XLAlert * (^)(UIColor *cancleButtonColor)) cancleButtonColor;
-//
-//- (XLAlert * (^)(Surehandler handler)) suerHandler;
-//- (XLAlert * (^)(Cancelhandler handler)) cancelHandler;
-//
-///**
-// * style:样式 0：1
-// * presentViewController:需要呈现的VC,不可空
-// */
-//- (XLAlert * (^)(XLAlertControllerStyle style)) style;
-//- (XLAlert * (^)(UIViewController *presentViewController)) presentViewController;
-//
-///**
-// * 呈现
-// */
-//- (XLAlert * (^)(void))show;
+- (XLAlert * (^)(NSString *tag)) tag;
+
+- (XLAlert * (^)(NSString *title)) title;
+- (XLAlert * (^)(NSString *message)) message;
+- (XLAlert * (^)(NSString *sureButtonTitle)) sureButtonTitle;
+- (XLAlert * (^)(NSString *cancelButtonTitle)) cancelButtonTitle;
+
+- (XLAlert * (^)(UIColor *sureButtonColor)) sureButtonColor;
+- (XLAlert * (^)(UIColor *cancleButtonColor)) cancleButtonColor;
+
+- (XLAlert * (^)(Surehandler handler)) suerHandler;
+- (XLAlert * (^)(Cancelhandler handler)) cancelHandler;
+
+/**
+ * style:样式 0：1
+ * presentViewController:需要呈现的VC,不可空
+ */
+- (XLAlert * (^)(XLAlertControllerStyle style)) style;
+- (XLAlert * (^)(UIViewController *presentViewController)) presentViewController;
+
+/**
+ * 呈现
+ */
+- (XLAlert * (^)(void))show;
 
 @end
 
